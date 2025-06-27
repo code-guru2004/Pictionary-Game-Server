@@ -4,6 +4,7 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const { wordBank } = require('./words/Word');
 // const { getThreeWords } = require('./words/Word');
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
@@ -89,6 +90,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5000, () => {
+server.listen(PORT, () => {
   console.log('🚀 Server listening on port 5000');
 });
